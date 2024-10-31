@@ -95,7 +95,7 @@ const {protein, salsa, toppings} = ingredients || {};
       </div>
       <div className="flex flex-col justify-center">
             <p className="text-[10px] text-center text-white">teklight @ {currentYear}</p>
-      <p>Coded with love</p>
+      <p>Coded with love @ teklight</p>
       </div>
   
     </div>
