@@ -24,7 +24,7 @@ const {protein, salsa, toppings} = ingredients || {};
   const fetchApi = () => {
     try {
       axios
-        .get("https://teckliteproject1.onrender.com")
+        .get("https://teklight-pet-project1-1.onrender.com")
         .then((response) => setfood(response.data));
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ const {protein, salsa, toppings} = ingredients || {};
     console.log(id);
     try {
       axios
-        .get(`https://teckliteproject1.onrender.com/recipe/${id}`)
+        .get(`https://teklight-pet-project1-1.onrender.com/recipe/${id}`)
         .then((response) => setIngredient(response.data));
     } catch (error) {
       console.log(error);
