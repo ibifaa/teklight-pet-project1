@@ -10,6 +10,7 @@ import foodImage from "./assets/png/food.png";
 function App() {
 const [food, setfood] = useState([]);
 const [ingredient, setIngredient] = useState({});
+const currentYear = new Date().getFullYear();
 
 const {id, type, ingredients} = ingredient;
 const {protein, salsa, toppings} = ingredients || {};
@@ -23,7 +24,7 @@ const {protein, salsa, toppings} = ingredients || {};
   const fetchApi = () => {
     try {
       axios
-        .get("http://localhost:3000")
+        .get("https://teckliteproject1.onrender.com")
         .then((response) => setfood(response.data));
     } catch (error) {
       console.log(error);
@@ -34,7 +35,7 @@ const {protein, salsa, toppings} = ingredients || {};
     console.log(id);
     try {
       axios
-        .get(`http://localhost:3000/recipe/${id}`)
+        .get(`https://teckliteproject1.onrender.com/recipe/${id}`)
         .then((response) => setIngredient(response.data));
     } catch (error) {
       console.log(error);
@@ -92,6 +93,11 @@ const {protein, salsa, toppings} = ingredients || {};
         }
      </div>
       </div>
+      <div className="flex flex-col justify-center">
+            <p className="text-[10px] text-center text-white">teklight @ {currentYear}</p>
+      <p>Coded with love</p>
+      </div>
+  
     </div>
   );
 }
