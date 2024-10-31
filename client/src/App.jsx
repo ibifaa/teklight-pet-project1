@@ -52,7 +52,7 @@ const {protein, salsa, toppings} = ingredients || {};
       <div className=" flex w-[100%] justify-center items-center content-center ">
       <div className="flex justify-center items-center bg-white p-1 w-[40%]  ">
         <div className="">
-          <h1 className="text-[#03a9f4f] text-center text-[50px] font-bold">Taco</h1>
+          <h1 className="text-[#03a9f4f] text-center text-[50px] font-bold">Taco Recipes</h1>
         </div>
         <div className="">
           {" "}
@@ -77,7 +77,7 @@ const {protein, salsa, toppings} = ingredients || {};
       <div className="flex bg-white text-black justify-center w-[100%]">
         <div>
         <h2 className="text-[#03a9f4f] text-[24px] font-bold">{ingredient.name}</h2>
-        <h3>Ingredients</h3>
+        <h3>List of Ingredients</h3>
         {
           toppings && toppings.map((item, index)=>(
             <div key={index}>
@@ -96,6 +96,7 @@ const {protein, salsa, toppings} = ingredients || {};
       <div className="flex flex-col justify-center">
             <p className="text-[10px] text-center text-white">teklight @ {currentYear}</p>
       <p>Coded with love @ teklight</p>
+      <p></p>
       </div>
   
     </div>
