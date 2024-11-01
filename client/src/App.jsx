@@ -5,9 +5,15 @@ import fish from "./assets/png/fish.png";
 import beef from "./assets/png/beef.png";
 import chicken from "./assets/png/fried-chicken.png";
 import foodImage from "./assets/png/food.png";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+// toast.configure();
 
 function App() {
+  const notify = () => toast("Choose a protein to load ingredients");
+ 
+
 const [food, setfood] = useState([]);
 const [ingredient, setIngredient] = useState({});
 const currentYear = new Date().getFullYear();
@@ -43,14 +49,21 @@ const {protein, salsa, toppings} = ingredients || {};
   };
 
   useEffect(() => {
+    notify();
     fetchApi();
+
+   
+  
+    
   }, [ingredient]);
 
   return (
     <div className="bg h-[100vh]">
+    
       <div className="h-[30px]"></div>
+      <ToastContainer/>
       <div className=" flex w-[100%] justify-center items-center content-center ">
-      <div className="flex justify-center items-center bg-white p-1 w-[40%]  ">
+      <div className="flex justify-center items-center bg-white p-1 md:w-[40%] w-[100%]">
         <div className="">
           <h1 className="text-[#03a9f4f] text-center text-[50px] font-bold">Taco Recipes</h1>
         </div>
@@ -66,18 +79,18 @@ const {protein, salsa, toppings} = ingredients || {};
         {items.map((item, index) => (
           <div
             key={index}
-            className="bg-white p-2 rounded-full w-[7%] "
+            className="bg-white p-2 rounded-full md:w-[7%] w-[15%] "
             onClick={() => handleClick(item.id)}
           >
             {" "}
-            <img src={item.url} alt="" />
+            <img src={item.url} alt="proteins" />
           </div>
         ))}
       </div>
       <div className="flex bg-white text-black justify-center w-[100%]">
-        <div>
+        <div className="p-5">
         <h2 className="text-[#03a9f4f] text-[24px] font-bold">{ingredient.name}</h2>
-        <h3>List of Ingredients</h3>
+        <h3 className="font-bold leading-6">List of Ingredients</h3>
         {
           toppings && toppings.map((item, index)=>(
             <div key={index}>
@@ -93,9 +106,9 @@ const {protein, salsa, toppings} = ingredients || {};
         }
      </div>
       </div>
-      <div className="flex flex-col justify-center">
-            <p className="text-[10px] text-center text-white">teklight @ {currentYear}</p>
-      <p>Coded with love @ teklight</p>
+      <div className="flex flex-col justify-center mt-[80px] bg-white p-2 md:w-[20%] w-[100%] ">
+      <p className="font-bold  text-center">Coded with love @ teklight</p>
+      <p className="text-[10px] text-center  font-bold">teklight @ {currentYear}</p>
       <p></p>
       </div>
   
